@@ -3,7 +3,7 @@
     <ribbon></ribbon>
     <div id="app-header">
       <jhi-navbar></jhi-navbar>
-      <sidebar-menu :menu="menu" />
+      <jhi-sidebar-menu></jhi-sidebar-menu>
     </div>
     <div class="container-fluid">
       <div class="card jh-card">

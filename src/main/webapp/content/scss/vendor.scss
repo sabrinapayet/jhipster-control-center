@@ -10,7 +10,8 @@ eg $input-color: red;
 @import '~bootstrap/scss/bootstrap';
 @import '~bootstrap-vue/src/index.scss';
 @import '~bootswatch/dist/spacelab/bootswatch';
-@import 'vue-sidebar-menu/dist/vue-sidebar-menu.css';
+@import '~vue-sidebar-menu/src/scss/vue-sidebar-menu.scss';
+
 /* Dirty fix on navbar active link with bootswatch theme */
 nav li.router-link-active .navbar-dropdown-menu {
   color: $navbar-dark-active-color;
