@@ -1,8 +1,8 @@
 import { Component, Inject, Vue } from 'vue-property-decorator';
-import AccountService from '@/account/account.service';
-//import { SidebarMenu } from 'vue-sidebar-menu';
+//import AccountService from '@/account/account.service';
+import { SidebarMenu } from 'vue-sidebar-menu';
 
-@Component
+/*@Component
 export default class VueSidebarMenu extends Vue {
   @Inject('accountService')
   private accountService: () => AccountService;
@@ -37,15 +37,12 @@ export default class VueSidebarMenu extends Vue {
   public get inProduction(): boolean {
     return this.$store.getters.activeProfiles.indexOf('prod') > -1;
   }
-}
-/*@Component({
+}*/
+@Component({
   components: {
     'sidebar-menu': SidebarMenu
   }
 })
-
-export default class VueSidebarMenu extends Vue {}
-
 export default class VueSidebarMenu extends Vue {
   public menu = [
     {
@@ -70,9 +67,8 @@ export default class VueSidebarMenu extends Vue {
       ]
     }
   ];
-  
 
-  public isCollapsed = false;
+  public isCollapsed = true;
   public mobileItem = null;
   public mobileItemPos = 0;
   public mobileItemHeight = 0;
@@ -82,6 +78,4 @@ export default class VueSidebarMenu extends Vue {
   public parentWidth = '100vw';
   public parentOffsetTop = '0px';
   public parentOffsetLeft = '0px';
-
 }
-*/

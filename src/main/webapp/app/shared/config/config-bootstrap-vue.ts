@@ -3,6 +3,7 @@ import {
   BFormInput,
   BFormCheckbox,
   BFormGroup,
+  BImg,
   BProgress,
   BProgressBar,
   BPagination,
@@ -20,7 +21,9 @@ import {
   BLink,
   BAlert,
   BModal,
-  VBModal
+  VBModal,
+  BSidebar,
+  VBToggle
 } from 'bootstrap-vue';
 
 export function initBootstrapVue(vue) {
@@ -47,4 +50,7 @@ export function initBootstrapVue(vue) {
   vue.component('b-nav-item-dropdown', BNavItemDropdown);
   vue.component('b-modal', BModal);
   vue.directive('b-modal', VBModal);
+  vue.directive('bToggle', VBToggle);
+  vue.component('b-sidebar', BSidebar);
+  vue.component('b-img', BImg);
 }
