@@ -3,21 +3,19 @@
     <ribbon></ribbon>
     <div id="app-header">
       <jhi-navbar></jhi-navbar>
-      <jhi-sidebar-menu></jhi-sidebar-menu>
     </div>
-    <div class="container-fluid">
-      <div class="card jh-card">
-        <router-view></router-view>
+      <div class="container-fluid d-flex align-items-stretch">
+         <jhi-sidebar-menu></jhi-sidebar-menu>
+        <div class="card jh-card">
+          <router-view></router-view>
+        </div>
+        <b-modal id="login-page" hide-footer lazy>
+          <span slot="modal-title" id="login-title">Sign in</span>
+          <login-form></login-form>
+        </b-modal>
       </div>
-      <b-modal id="login-page" hide-footer lazy>
-        <span slot="modal-title" id="login-title">Sign in</span>
-        <login-form></login-form>
-      </b-modal>
-
       <jhi-footer></jhi-footer>
     </div>
-  </div>
 </template>
 
-<script lang="ts" src="./app.component.ts">
-</script>
+<script lang="ts" src="./app.component.ts"></script>

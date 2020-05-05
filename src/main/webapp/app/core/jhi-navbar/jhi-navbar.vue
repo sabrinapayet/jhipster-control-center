@@ -115,6 +115,7 @@
 /* jhcc-custom */
 .navbar {
   padding: 0.5rem !important;
+  z-index: 1000;
 }
 
 @media screen and (min-width: 768px) {
