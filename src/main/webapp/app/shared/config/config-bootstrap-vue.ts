@@ -8,6 +8,7 @@ import {
   BProgressBar,
   BPagination,
   BButton,
+  BNav,
   BNavbar,
   BNavbarNav,
   BNavbarBrand,
@@ -23,7 +24,8 @@ import {
   BModal,
   VBModal,
   BSidebar,
-  VBToggle
+  VBToggle,
+  BFormSelect
 } from 'bootstrap-vue';
 
 export function initBootstrapVue(vue) {
@@ -53,4 +55,6 @@ export function initBootstrapVue(vue) {
   vue.directive('bToggle', VBToggle);
   vue.component('b-sidebar', BSidebar);
   vue.component('b-img', BImg);
+  vue.component('b-nav', BNav);
+  vue.component('b-select', BFormSelect);
 }

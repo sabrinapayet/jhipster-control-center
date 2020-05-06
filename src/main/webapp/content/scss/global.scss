@@ -89,6 +89,7 @@ Generic styles
   margin-top: 20px;
   border: none;
   background: inherit;
+  margin-left: 200px;
 }
 
 .error {
@@ -120,6 +121,10 @@ Generic styles
 
 .footer {
   border-top: 1px solid rgba(0, 0, 0, 0.125);
+  bottom: 0;
+  width: 99%;
+  height: 60px;
+  display: block;
 }
 
 .hand,

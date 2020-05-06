@@ -1,6 +1,5 @@
 import { Component, Inject, Vue } from 'vue-property-decorator';
 import AccountService from '@/account/account.service';
-import { SidebarMenu } from 'vue-sidebar-menu';
 
 @Component
 export default class VueSidebarMenu extends Vue {
