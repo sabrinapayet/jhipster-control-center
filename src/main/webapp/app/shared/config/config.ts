@@ -39,6 +39,7 @@ import { faWrench } from '@fortawesome/free-solid-svg-icons/faWrench';
 import { faSitemap } from '@fortawesome/free-solid-svg-icons/faSitemap';
 import { faCube } from '@fortawesome/free-solid-svg-icons/faCube';
 import { faChartLine } from '@fortawesome/free-solid-svg-icons/faChartLine';
+import { faAlignLeft } from '@fortawesome/free-solid-svg-icons/faAlignLeft';
 
 import VueCookie from 'vue-cookie';
 import Vuelidate from 'vuelidate';
@@ -95,7 +96,8 @@ export function initFortAwesome(vue) {
     faUserPlus,
     faWrench,
     faSitemap,
-    faCube
+    faCube,
+    faAlignLeft
   );
 }
 

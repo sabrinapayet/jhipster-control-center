@@ -49,9 +49,9 @@ Main page styles
 
 .hipster.img-fluid {
   display: inline-block;
-  width: 347px;
+  width: 150px;
   height: 497px;
-  background: url('../images/jhipster_family_member_3.svg') no-repeat center top;
+  background: url('../images/jhipster_family_member_3.svg') no-repeat center bottom;
   background-size: contain;
 }
 
@@ -92,6 +92,12 @@ Generic styles
   margin-left: 200px;
 }
 
+@media screen and (max-width: 767px) {
+  .jh-card {
+    margin-left: 120px;
+  }
+}
+
 .error {
   color: white;
   background-color: red;
@@ -119,17 +125,21 @@ Generic styles
   opacity: 1;
 }
 
+.hand,
+[jhisortby] {
+  cursor: pointer;
+}
+
+/* ==========================================================================
+App footer
+========================================================================== */
+
 .footer {
   border-top: 1px solid rgba(0, 0, 0, 0.125);
   bottom: 0;
   width: 99%;
   height: 60px;
   display: block;
-}
-
-.hand,
-[jhisortby] {
-  cursor: pointer;
 }
 
 /* ==========================================================================

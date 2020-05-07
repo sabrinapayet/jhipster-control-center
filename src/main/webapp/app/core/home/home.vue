@@ -1,8 +1,6 @@
 <template>
-    <div class="home row">
-        <div class="col-md-3">
-        </div>
-        <div class="col-md-9">
+    <div>
+        <div>
             <h1 class="display-4">Welcome, Java Hipster!</h1>
             <p class="lead">This is your homepage</p>
 

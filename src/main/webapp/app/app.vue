@@ -1,25 +1,25 @@
 <template>
   <div id="app">
     <ribbon></ribbon>
-    <div id="app-header">
+    <div class="header">
       <!-- Navbar -->
       <jhi-navbar></jhi-navbar>
     </div>
-    <jhi-sidebar-menu></jhi-sidebar-menu>
     <div class="contenair-fluid">
-      <!-- Sidebar -->
-      
-
-      <!-- Page Content -->
-      <div class="card jh-card">
+        <!-- Sidebar -->
+        <jhi-sidebar-menu></jhi-sidebar-menu>
+        <!-- Page Content -->
+        <div class="card jh-card">
           <router-view></router-view>
+        </div>
+        <b-modal id="login-page" hide-footer lazy>
+          <span slot="modal-title" id="login-title">Sign in</span>
+          <login-form></login-form>
+        </b-modal>
       </div>
-      <b-modal id="login-page" hide-footer lazy>
-        <span slot="modal-title" id="login-title">Sign in</span>
-        <login-form></login-form>
-      </b-modal>
-    </div>
-    <div><jhi-footer></jhi-footer></div>
+
+    <!-- Footer -->
+    <jhi-footer></jhi-footer>
   </div>
   <!-- We'll fill this with dummy content -->
 </template>
