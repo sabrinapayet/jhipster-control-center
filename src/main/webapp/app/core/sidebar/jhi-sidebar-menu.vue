@@ -1,11 +1,13 @@
 <template>
   <div v-if="hasAnyAuthority('ROLE_ADMIN')">
-    <b-sidebar bg-variant="dark" 
-    text-variant="light" 
-    id="sidebar-footer" 
-    no-close-on-route-change 
-    no-close-on-esc
-    visible>
+    <b-sidebar
+      bg-variant="dark"
+      text-variant="light"
+      id="sidebar-footer"
+      no-close-on-route-change
+      no-close-on-esc
+      visible
+    >
       <template v-slot:footer="{ hide }">
         <div class="d-flex text-light align-items-center">
           <b-button block variant="primary" @click="hide">
@@ -15,6 +17,10 @@
       </template>
       <div class="px-3">
         <b-nav vertical text-variant="light" aria-label="Sidebar" no-header>
+          <b-nav-item to="/applications/instances">
+            <font-awesome-icon icon="cube" />
+            <span>Instances</span>
+          </b-nav-item>
           <b-nav-item none disabled>
             <font-awesome-icon icon="chart-line" />
             <span>DashBoard</span>
@@ -59,8 +65,7 @@
   }
 }
 
-.btn-block{
-border-radius: 0;
+.btn-block {
+  border-radius: 0;
 }
-
 </style>

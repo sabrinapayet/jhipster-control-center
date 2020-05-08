@@ -10,7 +10,7 @@
     </b-navbar-nav>
     <b-navbar-brand class="logo" b-link to="/">
       <span class="logo-img"></span>
-      <span class="navbar-title">Jhipster control center</span> <span class="navbar-version">{{ version }}</span>
+      <span class="navbar-title"><span class="jhipster-title">JHipster</span> Control center</span> <span class="navbar-version">{{ version }}</span>
     </b-navbar-brand>
 
     <b-navbar-toggle class="header-tabs"
@@ -29,22 +29,6 @@
             <span>Home</span>
           </span>
         </b-nav-item>
-        <b-nav-item-dropdown
-          id="applications-menu"
-          v-if="hasAnyAuthority('ROLE_ADMIN')"
-          :class="{ 'router-link-active': subIsActive('/applications') }"
-          active-class="active"
-          class="pointer"
-        >
-          <span slot="button-content" class="navbar-dropdown-menu">
-            <font-awesome-icon icon="sitemap" />
-            <span>Applications</span>
-          </span>
-          <b-dropdown-item to="/applications/instances">
-            <font-awesome-icon icon="cube" />
-            <span>Instances</span>
-          </b-dropdown-item>
-        </b-nav-item-dropdown>
         <b-nav-item-dropdown id="entity-menu" v-if="authenticated" active-class="active" class="pointer">
           <span slot="button-content" class="navbar-dropdown-menu">
             <font-awesome-icon icon="th-list" />
@@ -170,6 +154,11 @@ button:focus {
   vertical-align: middle;
 }
 
+.jhipster-title{
+  font-family: Pacifico, cursive;
+  font-weight: lighter;
+}
+
 /* waiting for bootstrap fix bug on nav-item-dropdown a:active
 https://github.com/bootstrap-vue/bootstrap-vue/issues/2219
 */
@@ -206,5 +195,6 @@ nav li.router-link-active .navbar-dropdown-menu {
   background: url('../../../content/images/logo-jhipster.png') no-repeat center center;
   background-size: contain;
   width: 100%;
+  filter: drop-shadow(0 0 0.05rem white);
 }
 </style>
