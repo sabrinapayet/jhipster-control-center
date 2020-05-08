@@ -13,7 +13,12 @@
       <span class="navbar-title">Jhipster control center</span> <span class="navbar-version">{{ version }}</span>
     </b-navbar-brand>
 
-    <b-navbar-toggle right href="javascript:void(0);" target="header-tabs" aria-expanded="false" aria-label="Toggle navigation">
+    <b-navbar-toggle class="header-tabs"
+    right 
+    href="javascript:void(0);" 
+    target="header-tabs" 
+    aria-expanded="false" 
+    aria-label="Toggle navigation">
       <font-awesome-icon icon="bars" />
     </b-navbar-toggle>
     <b-collapse is-nav id="header-tabs" class="header-tabs">
@@ -131,8 +136,11 @@
   min-height: 4rem;
   padding: 0.5rem !important;
   z-index: 1000;
-  position: sticky;
+  position: fixed;
   top: 0;
+  right: 0;
+  left: 0;
+  justify-content: start;
 }
 
 button:focus {
@@ -169,13 +177,9 @@ nav li.router-link-active .navbar-dropdown-menu {
   cursor: pointer;
 }
 
-.row {
-  margin-left: 0px;
-}
-
 .header-tabs {
   position: absolute;
-  right: 0;
+  right: 1rem;
 }
 
 .collapsed > .when-opened,
