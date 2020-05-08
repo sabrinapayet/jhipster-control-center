@@ -1,30 +1,22 @@
 <template>
-  <b-navbar toggleable="md" type="dark" class="bg-primary">
-    <div class="jh-logo-container row">
-    <b-navbar-nav class="sidebar-menu">                       
+  <b-navbar toggleable="lg" type="dark" class="bg-primary">
+    <b-navbar-nav>
       <b-nav-item id="sidebar-icon" to="/" exact v-if="hasAnyAuthority('ROLE_ADMIN')">
-          <span v-b-toggle.sidebar-footer>
-            <font-awesome-icon class="fa-2x" icon="align-left" />
-          </span>
-        </b-nav-item>
-      </b-navbar-nav>
-      <b-navbar-brand class="col-10 logo float-left" b-link to="/">
-        <span class="logo-img"></span>
-        <span class="navbar-title">Jhipster control center</span> <span class="navbar-version">{{ version }}</span>
-      </b-navbar-brand>
-      <b-navbar-toggle
-        right
-        class="jh-navbar-toggler d-lg-none float-right col"
-        href="javascript:void(0);"
-        data-toggle="collapse"
-        target="header-tabs"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <font-awesome-icon icon="bars" />
-      </b-navbar-toggle>
-    </div>
-    <b-collapse is-nav id="header-tabs">
+        <div v-b-toggle.sidebar-footer>
+          <span class="when-opened"><font-awesome-icon class="fa-lg" icon="align-left"/></span>
+          <span class="when-closed"><font-awesome-icon class="fa-lg" icon="align-right"/></span>
+        </div>
+      </b-nav-item>
+    </b-navbar-nav>
+    <b-navbar-brand class="logo" b-link to="/">
+      <span class="logo-img"></span>
+      <span class="navbar-title">Jhipster control center</span> <span class="navbar-version">{{ version }}</span>
+    </b-navbar-brand>
+
+    <b-navbar-toggle right href="javascript:void(0);" target="header-tabs" aria-expanded="false" aria-label="Toggle navigation">
+      <font-awesome-icon icon="bars" />
+    </b-navbar-toggle>
+    <b-collapse is-nav id="header-tabs" class="header-tabs">
       <b-navbar-nav class="ml-auto">
         <b-nav-item to="/" exact>
           <span>
@@ -101,7 +93,7 @@
 }
 
 button:focus {
- outline-color: white;
+  outline-color: white;
 }
 
 @media screen and (min-width: 768px) {
@@ -126,6 +118,7 @@ button:focus {
   display: inline-block;
   vertical-align: middle;
 }
+
 /* waiting for bootstrap fix bug on nav-item-dropdown a:active
 https://github.com/bootstrap-vue/bootstrap-vue/issues/2219
 */
@@ -134,11 +127,17 @@ nav li.router-link-active .navbar-dropdown-menu {
 }
 
 .row {
-    margin-left: 0px;
+  margin-left: 0px;
 }
 
-.sidebar-menu {
-  float: left;
+.header-tabs {
+  position: absolute;
+  right: 0;
+}
+
+.collapsed > .when-opened,
+:not(.collapsed) > .when-closed {
+  display: none;
 }
 
 /* ==========================================================================
@@ -146,6 +145,11 @@ nav li.router-link-active .navbar-dropdown-menu {
     ========================================================================== */
 .navbar-brand.logo {
   padding: 5px 15px;
+}
+
+.navbar-brand{
+  position: fixed;
+  margin-left: 50px;
 }
 
 .logo .logo-img {
@@ -161,5 +165,4 @@ nav li.router-link-active .navbar-dropdown-menu {
   background-size: contain;
   width: 100%;
 }
-
 </style>

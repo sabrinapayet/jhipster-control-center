@@ -1,6 +1,11 @@
 <template>
   <div v-if="hasAnyAuthority('ROLE_ADMIN')">
-    <b-sidebar bg-variant="dark" text-variant="light" id="sidebar-footer" no-close-on-route-change visible>
+    <b-sidebar bg-variant="dark" 
+    text-variant="light" 
+    id="sidebar-footer" 
+    no-close-on-route-change 
+    no-close-on-esc
+    visible>
       <template v-slot:footer="{ hide }">
         <div class="d-flex text-light align-items-center">
           <b-button block variant="primary" @click="hide">
