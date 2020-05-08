@@ -1,13 +1,11 @@
 <template>
-  <div v-if="hasAnyAuthority('ROLE_ADMIN')">
-    <b-sidebar
-      bg-variant="dark"
-      text-variant="light"
-      id="sidebar-footer"
-      no-close-on-route-change
-      no-close-on-esc
-      visible
-    >
+  <div class="sidebar" v-if="hasAnyAuthority('ROLE_ADMIN')">
+    <b-sidebar bg-variant="dark" 
+    text-variant="light" 
+    id="sidebar-footer" 
+    no-close-on-route-change 
+    no-close-on-esc 
+    visible>
       <template v-slot:footer="{ hide }">
         <div class="d-flex text-light align-items-center">
           <b-button block variant="primary" @click="hide">
@@ -27,7 +25,7 @@
           </b-nav-item>
           <b-nav-item to="/admin/jhi-metrics">
             <font-awesome-icon icon="tachometer-alt" />
-            <span id="collapse-1">Metrics</span>
+            <span>Metrics</span>
           </b-nav-item>
           <b-nav-item to="/admin/jhi-health">
             <font-awesome-icon icon="heart" />
@@ -56,7 +54,8 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-@media screen and (max-width: 768px) {
+
+@media screen and (max-width: 1150px) {
   span {
     display: none;
   }

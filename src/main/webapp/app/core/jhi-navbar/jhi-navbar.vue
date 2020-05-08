@@ -1,27 +1,32 @@
 <template>
-  <b-navbar toggleable="lg" type="dark" class="bg-primary">
-    <b-navbar-nav>
-      <b-nav-item id="sidebar-icon" to="/" exact v-if="hasAnyAuthority('ROLE_ADMIN')">
-        <div v-b-toggle.sidebar-footer>
-          <span class="when-opened"><font-awesome-icon class="fa-lg" icon="align-left"/></span>
-          <span class="when-closed"><font-awesome-icon class="fa-lg" icon="align-right"/></span>
-        </div>
-      </b-nav-item>
-    </b-navbar-nav>
-    <b-navbar-brand class="logo" b-link to="/">
-      <span class="logo-img"></span>
-      <span class="navbar-title"><span class="jhipster-title">JHipster</span> Control center</span> <span class="navbar-version">{{ version }}</span>
-    </b-navbar-brand>
+  <b-navbar toggleable="md" type="dark" class="bg-primary">
+    <b-row h-100>
+      <div class="jh-logo-container" my-auto>
+           <div class="icon-menu navbar-nav nav-item" id="sidebar-icon" exact v-if="hasAnyAuthority('ROLE_ADMIN')">
+            <div v-b-toggle.sidebar-footer>
+              <span class="nav-link when-opened"><font-awesome-icon class="fa-2x" icon="align-left"/></span>
+              <span class="nav-link when-closed"><font-awesome-icon class="fa-2x" icon="align-right"/></span>
+            </div>
+          </div>
+        <b-navbar-brand class="logo" b-link to="/">
+          <span class="logo-img"></span>
+          <span class="navbar-title"><span class="jhipster-title">JHipster</span> Control center</span>
+          <span class="navbar-version">{{ version }}</span>
+        </b-navbar-brand>
 
-    <b-navbar-toggle class="header-tabs"
-    right 
-    href="javascript:void(0);" 
-    target="header-tabs" 
-    aria-expanded="false" 
-    aria-label="Toggle navigation">
-      <font-awesome-icon icon="bars" />
-    </b-navbar-toggle>
-    <b-collapse is-nav id="header-tabs" class="header-tabs">
+        <b-navbar-toggle
+          class=" jh-navbar-toggler header-tabs"
+          right
+          href="javascript:void(0);"
+          target="header-tabs"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <font-awesome-icon icon="bars" />
+        </b-navbar-toggle>
+      </div>
+    </b-row>
+    <b-collapse is-nav id="header-tabs">
       <b-navbar-nav class="ml-auto">
         <b-nav-item to="/" exact>
           <span>
@@ -29,7 +34,7 @@
             <span>Home</span>
           </span>
         </b-nav-item>
-        <b-nav-item-dropdown id="entity-menu" v-if="authenticated" active-class="active" class="pointer">
+        <b-nav-item-dropdown right id="entity-menu" v-if="authenticated" active-class="active" class="pointer">
           <span slot="button-content" class="navbar-dropdown-menu">
             <font-awesome-icon icon="th-list" />
             <span>Entities</span>
@@ -37,6 +42,7 @@
           <!-- jhipster-needle-add-entity-to-menu - JHipster will add entities to the menu here -->
         </b-nav-item-dropdown>
         <b-nav-item-dropdown
+          right
           id="applications-menu"
           v-if="hasAnyAuthority('ROLE_ADMIN')"
           :class="{ 'router-link-active': subIsActive('/applications') }"
@@ -136,14 +142,12 @@ button:focus {
     display: none;
   }
 }
-
 @media screen and (min-width: 768px) and (max-width: 1150px) {
   span span {
     display: none;
   }
 }
-
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 768px) {
   .jh-logo-container {
     width: 100%;
   }
@@ -154,7 +158,7 @@ button:focus {
   vertical-align: middle;
 }
 
-.jhipster-title{
+.jhipster-title {
   font-family: Pacifico, cursive;
   font-weight: lighter;
 }
@@ -169,6 +173,17 @@ nav li.router-link-active .navbar-dropdown-menu {
 .header-tabs {
   position: absolute;
   right: 1rem;
+  line-height: 1.5;
+  margin-top: 5px;
+}
+
+.icon-menu {
+  display: inline-block;
+  margin-left: 10px;
+}
+
+.navbar-dropdown-menu {
+  right: 0;
 }
 
 .collapsed > .when-opened,
