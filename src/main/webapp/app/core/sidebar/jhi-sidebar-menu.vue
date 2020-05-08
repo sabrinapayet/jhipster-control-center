@@ -1,19 +1,16 @@
 <template>
-  <div  v-if="hasAnyAuthority('ROLE_ADMIN')">
-    <b-sidebar
-      bg-variant="dark"
-      text-variant="light"
-      id="sidebar-footer"
-      no-close-on-route-change
-      visible>
+  <div v-if="hasAnyAuthority('ROLE_ADMIN')">
+    <b-sidebar bg-variant="dark" text-variant="light" id="sidebar-footer" no-close-on-route-change visible>
       <template v-slot:footer="{ hide }">
-        <div class="d-flex bg-light text-light align-items-center px-3 py-2">
-          <b-button btn btn-secondary size="sm" @click="hide">Close</b-button>
+        <div class="d-flex text-light align-items-center">
+          <b-button block variant="primary" @click="hide">
+            <font-awesome-icon icon="angle-double-left" />
+          </b-button>
         </div>
       </template>
-      <div class="px-3 py-2">
+      <div class="px-3">
         <b-nav vertical text-variant="light" aria-label="Sidebar" no-header>
-          <b-nav-item disabled>
+          <b-nav-item none disabled>
             <font-awesome-icon icon="chart-line" />
             <span>DashBoard</span>
           </b-nav-item>
@@ -40,7 +37,6 @@
         </b-nav>
         <span class="hipster img-fluid"></span>
       </div>
-        
     </b-sidebar>
   </div>
 </template>
@@ -49,14 +45,17 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-
 @media screen and (max-width: 768px) {
   span {
     display: none;
   }
-  .hipster{
-      display: none !important;
+  .hipster {
+    display: none !important;
   }
+}
+
+.btn-block{
+border-radius: 0;
 }
 
 </style>

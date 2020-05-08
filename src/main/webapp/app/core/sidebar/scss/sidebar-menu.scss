@@ -24,7 +24,8 @@
   }
   .disabled {
     color: rgb(119, 119, 119);
-    pointer-events: none;
-    cursor: not-allowed;
+  }
+  .none {
+    cursor: none;
   }
 }

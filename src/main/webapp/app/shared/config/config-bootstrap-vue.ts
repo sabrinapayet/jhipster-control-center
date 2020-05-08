@@ -26,7 +26,10 @@ import {
   BSidebar,
   VBToggle,
   BFormSelect,
-  BCard
+  BCard,
+  BContainer,
+  BRow,
+  BCol
 } from 'bootstrap-vue';
 
 export function initBootstrapVue(vue) {
@@ -59,4 +62,7 @@ export function initBootstrapVue(vue) {
   vue.component('b-nav', BNav);
   vue.component('b-select', BFormSelect);
   vue.component('b-card', BCard);
+  vue.component('b-container', BContainer);
+  vue.component('b-row', BRow);
+  vue.component('b-col', BCol);
 }

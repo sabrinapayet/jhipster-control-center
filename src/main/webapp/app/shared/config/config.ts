@@ -40,6 +40,7 @@ import { faSitemap } from '@fortawesome/free-solid-svg-icons/faSitemap';
 import { faCube } from '@fortawesome/free-solid-svg-icons/faCube';
 import { faChartLine } from '@fortawesome/free-solid-svg-icons/faChartLine';
 import { faAlignLeft } from '@fortawesome/free-solid-svg-icons/faAlignLeft';
+import { faAngleDoubleLeft } from '@fortawesome/free-solid-svg-icons/faAngleDoubleLeft';
 
 import VueCookie from 'vue-cookie';
 import Vuelidate from 'vuelidate';
@@ -61,6 +62,7 @@ export function initVueApp(vue) {
 export function initFortAwesome(vue) {
   library.add(
     faArrowLeft,
+    faAngleDoubleLeft,
     faAsterisk,
     faBan,
     faBars,

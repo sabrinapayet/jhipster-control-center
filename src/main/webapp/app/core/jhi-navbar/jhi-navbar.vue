@@ -1,9 +1,16 @@
 <template>
   <b-navbar toggleable="md" type="dark" class="bg-primary">
     <div class="jh-logo-container row">
+    <b-navbar-nav class="sidebar-menu">                       
+      <b-nav-item id="sidebar-icon" to="/" exact v-if="hasAnyAuthority('ROLE_ADMIN')">
+          <span v-b-toggle.sidebar-footer>
+            <font-awesome-icon class="fa-2x" icon="align-left" />
+          </span>
+        </b-nav-item>
+      </b-navbar-nav>
       <b-navbar-brand class="col-10 logo float-left" b-link to="/">
         <span class="logo-img"></span>
-        <span class="navbar-title">Jhipster</span> <span class="navbar-version">{{ version }}</span>
+        <span class="navbar-title">Jhipster control center</span> <span class="navbar-version">{{ version }}</span>
       </b-navbar-brand>
       <b-navbar-toggle
         right
@@ -71,11 +78,6 @@
             <span>Sign in</span>
           </b-dropdown-item>
         </b-nav-item-dropdown>
-         <b-nav-item id="sidebar-icon" to="/" exact v-if="hasAnyAuthority('ROLE_ADMIN')">
-          <span v-b-toggle.sidebar-footer>
-            <font-awesome-icon class="fa-lg" icon="align-left" />
-          </span>
-        </b-nav-item>
       </b-navbar-nav>
     </b-collapse>
   </b-navbar>
@@ -131,11 +133,19 @@ nav li.router-link-active .navbar-dropdown-menu {
   cursor: pointer;
 }
 
+.row {
+    margin-left: 0px;
+}
+
+.sidebar-menu {
+  float: left;
+}
+
 /* ==========================================================================
     Logo styles
     ========================================================================== */
 .navbar-brand.logo {
-  padding: 5px 5px;
+  padding: 5px 15px;
 }
 
 .logo .logo-img {
@@ -151,4 +161,5 @@ nav li.router-link-active .navbar-dropdown-menu {
   background-size: contain;
   width: 100%;
 }
+
 </style>
