@@ -88,6 +88,7 @@
 
 /* jhcc-custom */
 .navbar {
+  min-height: 4rem;
   padding: 0.5rem !important;
   z-index: 1000;
 }
