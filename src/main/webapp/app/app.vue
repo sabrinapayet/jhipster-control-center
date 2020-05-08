@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <ribbon></ribbon>
-    <div >
+    <div class="app-header">
       <!-- Navbar -->
       <jhi-navbar></jhi-navbar>
     </div>
