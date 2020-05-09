@@ -1,6 +1,10 @@
 .b-sidebar {
   padding-top: 70px;
   width: auto;
+  .b-sidebar-body {
+    height: calc(100% - 70px);
+    overflow: hidden;
+  }
 }
 
 .b-sidebar-outer {

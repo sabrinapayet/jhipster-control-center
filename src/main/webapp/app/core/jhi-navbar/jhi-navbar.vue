@@ -10,7 +10,7 @@
           </div>
         <b-navbar-brand class="logo" b-link to="/">
           <span class="logo-img"></span>
-          <span class="navbar-title"><span class="jhipster-title">JHipster</span> Control center</span>
+          <span class="navbar-title"><span class="jhipster-title">JHipster</span> Control Center</span>
           <span class="navbar-version">{{ version }}</span>
         </b-navbar-brand>
 
@@ -156,11 +156,12 @@ button:focus {
 .navbar-title {
   display: inline-block;
   vertical-align: middle;
+  font-family: Pacifico, cursive;
+  font-weight: lighter;
 }
 
 .jhipster-title {
-  font-family: Pacifico, cursive;
-  font-weight: lighter;
+  font-size: larger;
 }
 
 /* waiting for bootstrap fix bug on nav-item-dropdown a:active
