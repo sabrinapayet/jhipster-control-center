@@ -2,12 +2,14 @@
   <b-navbar toggleable="md" type="dark" class="bg-primary">
     <b-row h-100>
       <div class="jh-logo-container" my-auto>
-           <div class="icon-menu navbar-nav nav-item" id="sidebar-icon" exact v-if="hasAnyAuthority('ROLE_ADMIN')">
-            <div v-b-toggle.sidebar-footer>
-              <span class="nav-link when-opened"><font-awesome-icon class="fa-2x" icon="align-left"/></span>
-              <span class="nav-link when-closed"><font-awesome-icon class="fa-2x" icon="align-right"/></span>
-            </div>
+        <div class="icon-sidebar" id="sidebar-icon" exact v-if="hasAnyAuthority('ROLE_ADMIN')">
+          <div v-b-toggle.sidebar-footer>
+            <b-button variant="outline-info">
+              <font-awesome-icon class="fa-lg" icon="ellipsis-v" />
+              <font-awesome-icon class="fa-lg" icon="ellipsis-v" />
+            </b-button>
           </div>
+        </div>
         <b-navbar-brand class="logo" b-link to="/">
           <span class="logo-img"></span>
           <span class="navbar-title"><span class="jhipster-title">JHipster</span> Control Center</span>
@@ -15,7 +17,7 @@
         </b-navbar-brand>
 
         <b-navbar-toggle
-          class=" jh-navbar-toggler header-tabs"
+          class="header-tabs"
           right
           href="javascript:void(0);"
           target="header-tabs"
@@ -115,11 +117,8 @@
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 /* ==========================================================================
-    Navbar
-    ========================================================================== */
-.navbar-version {
-  font-size: 10px;
-}
+Navbar
+========================================================================== */
 
 /* jhcc-custom */
 .navbar {
@@ -133,25 +132,13 @@
   justify-content: start;
 }
 
-button:focus {
-  outline-color: white;
+.navbar-dropdown-menu {
+  right: 0;
 }
 
-@media screen and (min-width: 768px) {
-  .jh-navbar-toggler {
-    display: none;
-  }
-}
-@media screen and (min-width: 768px) and (max-width: 1150px) {
-  span span {
-    display: none;
-  }
-}
-@media screen and (max-width: 768px) {
-  .jh-logo-container {
-    width: 100%;
-  }
-}
+/* ==========================================================================
+    Title
+    ========================================================================== */
 
 .navbar-title {
   display: inline-block;
@@ -164,32 +151,49 @@ button:focus {
   font-size: larger;
 }
 
-/* waiting for bootstrap fix bug on nav-item-dropdown a:active
-https://github.com/bootstrap-vue/bootstrap-vue/issues/2219
-*/
-nav li.router-link-active .navbar-dropdown-menu {
-  cursor: pointer;
+.navbar-version {
+  font-size: 10px;
+}
+
+/* ==========================================================================
+    @media screen
+    ========================================================================== */
+
+@media screen and (min-width: 768px) {
+  navbar-toggle {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1150px) {
+  span span {
+    display: none;
+  }
+}
+@media screen and (max-width: 768px) {
+  .jh-logo-container {
+    width: 100%;
+  }
+}
+
+/* ==========================================================================
+    button & icon
+    ========================================================================== */
+
+.navbar-dark button {
+  color: white;
 }
 
 .header-tabs {
   position: absolute;
   right: 1rem;
   line-height: 1.5;
-  margin-top: 5px;
+  margin-top: 10px;
 }
 
-.icon-menu {
+.icon-sidebar {
   display: inline-block;
   margin-left: 10px;
-}
-
-.navbar-dropdown-menu {
-  right: 0;
-}
-
-.collapsed > .when-opened,
-:not(.collapsed) > .when-closed {
-  display: none;
 }
 
 /* ==========================================================================
