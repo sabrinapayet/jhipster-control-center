@@ -6,10 +6,10 @@ eg $input-color: red;
 ****************************/
 // Override Boostrap variables
 // Import Bootstrap source files from node_modules
-@import '~bootswatch/dist/yeti/variables';
+@import '~bootswatch/dist/spacelab/variables';
 @import '~bootstrap/scss/bootstrap';
 @import '~bootstrap-vue/src/index.scss';
-@import '~bootswatch/dist/yeti/bootswatch';
+@import '~bootswatch/dist/spacelab/bootswatch';
 @import './src/main/webapp/app/core/sidebar/scss/sidebar-menu.scss';
 
 /* Dirty fix on navbar active link with bootswatch theme */

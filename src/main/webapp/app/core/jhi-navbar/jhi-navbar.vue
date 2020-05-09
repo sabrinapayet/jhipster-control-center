@@ -4,7 +4,7 @@
       <div class="jh-logo-container" my-auto>
         <div class="icon-sidebar" id="sidebar-icon" exact v-if="hasAnyAuthority('ROLE_ADMIN')">
           <div v-b-toggle.sidebar-footer>
-            <b-button variant="outline-info">
+            <b-button variant="outline-primary">
               <font-awesome-icon class="fa-lg" icon="ellipsis-v" />
               <font-awesome-icon class="fa-lg" icon="ellipsis-v" />
             </b-button>
@@ -153,6 +153,7 @@ Navbar
 
 .navbar-version {
   font-size: 10px;
+  vertical-align: sub;
 }
 
 /* ==========================================================================
